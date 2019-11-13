@@ -88,3 +88,14 @@ babel 같은 경우, devDependencies를 사용하는 것을 추천
 
 - dependencies는 build시 Prodeuction bundle에 추가
 - devDependencies는 build시 Prodeuction bundle에 영향 없음
+
+## We Need 'npx' What Is The 'npx' ?
+
+<pre>
+    npx는 local에 설치 되어있는 스크립트들을 실행시켜주는 기능
+</pre>
+
+- npm install -g npx
+  <pre>
+      # npx babel-node index.js
+  </pre>
