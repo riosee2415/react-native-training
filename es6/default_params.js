@@ -1,6 +1,6 @@
-// Arrow Function
+// Default param
 
-const years = [
+const defaultValue = [
   {
     year: 2001,
     data: "크리스마스"
@@ -23,13 +23,8 @@ const years = [
   }
 ];
 
-// past
-const result = years.filter(function(data) {
-  return data.year > 2008;
-});
+function printYears(years = defaultValue) {
+  console.log(years);
+}
 
-// console.log(result);
-
-const allowResult = years.filter(data => data.year > 2000);
-
-console.log(allowResult);
+printYears();
