@@ -73,3 +73,18 @@ install watchman (Mac & Linux only, Window is currently in beta) Watchman is a t
   // run android
   $ react-native run-android
   </pre>
+
+<hr><hr>
+
+# babel
+
+- install babel
+  <pre>
+      1. npm init
+      2. npm install --save-dev @babel/cli @babel/core  @babel/node
+  </pre>
+
+babel 같은 경우, devDependencies를 사용하는 것을 추천
+
+- dependencies는 build시 Prodeuction bundle에 추가
+- devDependencies는 build시 Prodeuction bundle에 영향 없음
