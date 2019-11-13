@@ -82,6 +82,10 @@ install watchman (Mac & Linux only, Window is currently in beta) Watchman is a t
   <pre>
       1. npm init
       2. npm install --save-dev @babel/cli @babel/core  @babel/node
+      3. npm install --save-dev @babel/preset-env
+      <pre>
+        1) touch .babelrc in Project Path
+        2) https://babeljs.io/docs/en/presets</pre>
   </pre>
 
 babel 같은 경우, devDependencies를 사용하는 것을 추천
