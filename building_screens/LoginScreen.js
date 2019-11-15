@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
 import TextInput from './TextInput';
+import Button from './Button';
 
 const colors = {
   background: '#e3e3e3',
@@ -17,6 +18,7 @@ class App extends Component {
     this.state = {
       email: '',
       password: '',
+      isLoadingin: false,
     };
   }
 
@@ -48,6 +50,38 @@ class App extends Component {
               _onTextChanged={text => this._onTextChanged('PASSWORD', text)}
               password={true}
             />
+          </View>
+
+          <View style={styles.viewBtnWrapper}>
+            <Button
+              containerStyle={{flex: 1}}
+              onPress={() => {}}
+              style={styles.btnSignup}
+              textStyle={styles.txtSignup}>
+              Sign Up
+            </Button>
+            <View style={{width: 8}} />
+            <Button
+              containerStyle={{flex: 1}}
+              isLoading={this.state.isLoadingin}
+              onPress={() => {
+                this.setState(
+                  {
+                    isLoadingin: true,
+                  },
+                  () => {
+                    setTimeout(() => {
+                      this.setState({
+                        isLoadingin: false,
+                      });
+                    }, 3000);
+                  },
+                );
+              }}
+              style={styles.btnLogin}
+              textStyle={styles.txtLogin}>
+              Sign In
+            </Button>
           </View>
 
           <TouchableOpacity style={styles.touchForgotPw}>
@@ -131,10 +165,58 @@ const styles = StyleSheet.create({
     color: colors.dodgerBlue,
     textDecorationLine: 'underline',
   },
+  viewBtnWrapper: {
+    alignSelf: 'stretch',
+    marginTop: 20,
+    height: 60,
+
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  btnSignup: {
+    backgroundColor: 'transparent',
+    borderRadius: 4,
+    borderWidth: 1,
+    height: '100%',
+    width: '100%',
+    borderColor: colors.dodgerBlue,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  txtSignup: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: colors.dodgerBlue,
+  },
+  btnLogin: {
+    backgroundColor: colors.dodgerBlue,
+    borderColor: colors.dodgerBlue,
+    borderRadius: 4,
+    borderWidth: 1,
+    height: 60,
+    color: colors.cloudyBlue,
+    shadowColor: colors.dodgerBlue,
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowRadius: 4,
+    shadowOpacity: 0.3,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  txtLogin: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'white',
+  },
   txtCopyright: {
     marginTop: 80,
     fontSize: 12,
-    color: colors.cloudyBlue,
+    color: colors.blueGray,
   },
 });
 
